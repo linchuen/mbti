@@ -1,0 +1,210 @@
+[
+  {
+    "id": "intj",
+    "type_code": "INTJ",
+    "stack_summary": "以 Ni 定義主線方向，配合 Te 建立可執行系統。",
+    "stack": [
+      { "function_id": "ni", "position": "dominant" },
+      { "function_id": "te", "position": "auxiliary" },
+      { "function_id": "fi", "position": "tertiary" },
+      { "function_id": "se", "position": "inferior" }
+    ],
+    "processing_flow": ["先收斂核心趨勢", "再用外部系統拆解目標", "以價值感校準方向", "於壓力下出現即時衝動反應"],
+    "development": {
+      "early_stage": "早期多依賴內在洞見快速收斂方向，對外界即時變動容忍度較低。",
+      "balancing_stage": "中期開始用 Te 建立流程，將洞見轉為可驗證計畫，減少只靠直覺判斷。",
+      "mature_stage": "成熟後能讓 Fi 參與價值校準，同時以更穩定方式整合 Se 的當下訊號。"
+    },
+    "grip": {
+      "trigger": "長期策略受阻且控制感下降。",
+      "behaviors": ["短時間做出高刺激決策", "對當下細節過度反應", "原本長期節奏被打斷"],
+      "recovery": "回到核心目標，先恢復可控節奏，再逐步整合即時資訊。"
+    },
+    "interaction_misunderstandings": [
+      { "appearance": "看起來冷淡", "intention": "在保留認知資源做深度整合" },
+      { "appearance": "像在主導他人", "intention": "在降低執行不確定性與返工成本" }
+    ]
+  },
+  {
+    "id": "infj",
+    "type_code": "INFJ",
+    "stack_summary": "以 Ni 統整長期脈絡，透過 Fe 管理互動節奏與連結。",
+    "stack": [
+      { "function_id": "ni", "position": "dominant" },
+      { "function_id": "fe", "position": "auxiliary" },
+      { "function_id": "ti", "position": "tertiary" },
+      { "function_id": "se", "position": "inferior" }
+    ],
+    "processing_flow": ["先收斂情境主線", "再評估互動場域需求", "用 Ti 驗證內在模型", "壓力下落入 Se 過載反應"],
+    "development": {
+      "early_stage": "早期偏向內在洞見與預判，互動回應常有延遲。",
+      "balancing_stage": "中期開始穩定調動 Fe，讓洞見可被他人理解與協作。",
+      "mature_stage": "成熟後 Ti 與 Se 參與度提高，能兼顧模型精度與現場訊號。"
+    },
+    "grip": {
+      "trigger": "長期情緒負荷加上外部節奏失控。",
+      "behaviors": ["對感官刺激過度敏感", "決策節奏突然加快", "失去原本整體視角"],
+      "recovery": "縮小輸入量，回到核心脈絡，再逐步重建互動邊界。"
+    },
+    "interaction_misunderstandings": [
+      { "appearance": "像在保持距離", "intention": "正在整合大量訊號避免草率回應" },
+      { "appearance": "太在意氣氛", "intention": "在維持對話可持續性與協作穩定" }
+    ]
+  },
+  {
+    "id": "entp",
+    "type_code": "ENTP",
+    "stack_summary": "以 Ne 擴張可能路徑，透過 Ti 釐清結構可行性。",
+    "stack": [
+      { "function_id": "ne", "position": "dominant" },
+      { "function_id": "ti", "position": "auxiliary" },
+      { "function_id": "fe", "position": "tertiary" },
+      { "function_id": "si", "position": "inferior" }
+    ],
+    "processing_flow": ["先擴張多種可能", "再用邏輯模型篩選", "透過互動測試反應", "在壓力下陷入 Si 防衛模式"],
+    "development": {
+      "early_stage": "早期高頻探索新點子，收斂與落地能力較不穩定。",
+      "balancing_stage": "中期 Ti 參與增強，能更快淘汰不自洽方案。",
+      "mature_stage": "成熟後會主動調用 Si 形成可重複流程，降低分散風險。"
+    },
+    "grip": {
+      "trigger": "外部限制過多導致探索空間急遽縮小。",
+      "behaviors": ["反覆糾結過去失誤", "對細節過度警戒", "創新節奏突然停滯"],
+      "recovery": "先建立小範圍可控實驗，再逐步恢復發散探索。"
+    },
+    "interaction_misunderstandings": [
+      { "appearance": "像在唱反調", "intention": "透過對立觀點測試模型韌性" },
+      { "appearance": "不夠穩定", "intention": "在快速試探最佳解而非固著單一路徑" }
+    ]
+  },
+  {
+    "id": "enfj",
+    "type_code": "ENFJ",
+    "stack_summary": "以 Fe 組織人際節奏，結合 Ni 對整體方向進行收斂。",
+    "stack": [
+      { "function_id": "fe", "position": "dominant" },
+      { "function_id": "ni", "position": "auxiliary" },
+      { "function_id": "se", "position": "tertiary" },
+      { "function_id": "ti", "position": "inferior" }
+    ],
+    "processing_flow": ["先感知群體情緒與需求", "再收斂長期方向", "視情況調整現場回應", "壓力下落入 Ti 過度挑錯"],
+    "development": {
+      "early_stage": "早期高度投入互動協調，容易忽略內在分析資源。",
+      "balancing_stage": "中期 Ni 幫助聚焦方向，避免只被當下需求牽引。",
+      "mature_stage": "成熟後 Ti 逐步參與，可在維持連結下提升判斷精度。"
+    },
+    "grip": {
+      "trigger": "長期協調失效且缺乏回饋。",
+      "behaviors": ["語氣變得尖銳", "過度指出邏輯漏洞", "人際耐受度明顯下降"],
+      "recovery": "降低互動密度，重新釐清優先順序與邊界。"
+    },
+    "interaction_misunderstandings": [
+      { "appearance": "像在管理他人", "intention": "在維持群體運作節奏與合作效率" },
+      { "appearance": "情緒化", "intention": "在讀取系統中的關係風險訊號" }
+    ]
+  },
+  {
+    "id": "istj",
+    "type_code": "ISTJ",
+    "stack_summary": "以 Si 建立穩定參照，再用 Te 轉為可執行標準。",
+    "stack": [
+      { "function_id": "si", "position": "dominant" },
+      { "function_id": "te", "position": "auxiliary" },
+      { "function_id": "fi", "position": "tertiary" },
+      { "function_id": "ne", "position": "inferior" }
+    ],
+    "processing_flow": ["先比對既有經驗模板", "再建立執行流程", "以內在價值修正細節", "壓力下被大量可能性淹沒"],
+    "development": {
+      "early_stage": "早期依賴熟悉模式與穩定節奏，對突發變動反應保守。",
+      "balancing_stage": "中期 Te 協助把經驗轉為標準流程，提高效率與可複製性。",
+      "mature_stage": "成熟後能開放 Ne 探索替代路徑，避免過度僵化。"
+    },
+    "grip": {
+      "trigger": "規則失效與高不確定環境同時出現。",
+      "behaviors": ["突然擔心各種最壞情境", "反覆切換方案卻難以定案", "原有節奏被焦慮打散"],
+      "recovery": "先回到已驗證流程，再逐步加入小幅度新嘗試。"
+    },
+    "interaction_misunderstandings": [
+      { "appearance": "太死板", "intention": "在維持系統穩定與風險可控" },
+      { "appearance": "不接受新方法", "intention": "先確認新方案可被驗證與維護" }
+    ]
+  },
+  {
+    "id": "isfp",
+    "type_code": "ISFP",
+    "stack_summary": "以 Fi 維持價值一致，透過 Se 直接感知與回應當下。",
+    "stack": [
+      { "function_id": "fi", "position": "dominant" },
+      { "function_id": "se", "position": "auxiliary" },
+      { "function_id": "ni", "position": "tertiary" },
+      { "function_id": "te", "position": "inferior" }
+    ],
+    "processing_flow": ["先確認內在價值感受", "再依現場訊號回應", "透過 Ni 收斂方向", "壓力下陷入 Te 控制模式"],
+    "development": {
+      "early_stage": "早期優先確保內在真實感，對外部規範配合度視情境而定。",
+      "balancing_stage": "中期 Se 參與提升，能更有效把價值轉為具體行動。",
+      "mature_stage": "成熟後 Te 逐步發展，行動更能兼顧節奏與外部協作。"
+    },
+    "grip": {
+      "trigger": "價值壓力與現實要求長期對撞。",
+      "behaviors": ["語氣突然變得命令式", "只看效率不看脈絡", "對失誤容忍度驟降"],
+      "recovery": "暫停外部壓力，回到核心價值再重整執行步驟。"
+    },
+    "interaction_misunderstandings": [
+      { "appearance": "忽冷忽熱", "intention": "在保護內在一致性與界線" },
+      { "appearance": "不夠制度化", "intention": "優先確保行動與價值一致再擴展流程" }
+    ]
+  },
+  {
+    "id": "estp",
+    "type_code": "ESTP",
+    "stack_summary": "以 Se 即時掌握場域，透過 Ti 快速建模並調整行動。",
+    "stack": [
+      { "function_id": "se", "position": "dominant" },
+      { "function_id": "ti", "position": "auxiliary" },
+      { "function_id": "fe", "position": "tertiary" },
+      { "function_id": "ni", "position": "inferior" }
+    ],
+    "processing_flow": ["先接收即時環境訊號", "再快速驗證可行模型", "用互動回饋調整策略", "壓力下落入 Ni 單一路徑焦慮"],
+    "development": {
+      "early_stage": "早期偏好直接試做與現場回饋，長期規劃參與度較低。",
+      "balancing_stage": "中期 Ti 穩定後，能更快判斷哪些行動可持續。",
+      "mature_stage": "成熟後 Ni 逐步參與，開始納入長期後果與方向一致性。"
+    },
+    "grip": {
+      "trigger": "即時行動空間被長期封鎖。",
+      "behaviors": ["對未來風險過度聚焦", "反覆猜測單一不利結局", "行動節奏突然遲滯"],
+      "recovery": "先重建可操作小步驟，再擴展視角避免單線推演。"
+    },
+    "interaction_misunderstandings": [
+      { "appearance": "像在冒險", "intention": "透過現場回饋快速降低不確定性" },
+      { "appearance": "太直接", "intention": "用最短路徑同步資訊與行動" }
+    ]
+  },
+  {
+    "id": "esfj",
+    "type_code": "ESFJ",
+    "stack_summary": "以 Fe 維持群體秩序，透過 Si 讓流程與經驗保持穩定。",
+    "stack": [
+      { "function_id": "fe", "position": "dominant" },
+      { "function_id": "si", "position": "auxiliary" },
+      { "function_id": "ne", "position": "tertiary" },
+      { "function_id": "ti", "position": "inferior" }
+    ],
+    "processing_flow": ["先讀取群體需求與情緒", "再調用既有經驗做判斷", "用 Ne 嘗試替代方案", "壓力下進入 Ti 過度批判"],
+    "development": {
+      "early_stage": "早期高度投入維持互動秩序，常以既有流程確保可預測性。",
+      "balancing_stage": "中期開始讓 Ne 參與，能在維持穩定下調整方法。",
+      "mature_stage": "成熟後 Ti 參與增強，能更清楚界定原則與推論依據。"
+    },
+    "grip": {
+      "trigger": "長期關係投入未獲回應且標準被反覆挑戰。",
+      "behaviors": ["語氣變得過度嚴苛", "聚焦他人邏輯漏洞", "互動容忍度急降"],
+      "recovery": "縮小承擔範圍，先恢復穩定節奏，再逐步重建互動界線。"
+    },
+    "interaction_misunderstandings": [
+      { "appearance": "像在干涉", "intention": "在維持團隊運作與關係連續性" },
+      { "appearance": "不夠客觀", "intention": "把人際成本納入決策模型" }
+    ]
+  }
+]

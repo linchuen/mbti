@@ -1,0 +1,178 @@
+[
+  {
+    "id": "fi",
+    "name": "Fi",
+    "function_axis": "Fi-Te",
+    "short_summary": "用內在價值座標判斷是否一致",
+    "keyword": ["價值一致", "真誠", "內在校準"],
+    "essence": "Fi 在判斷時負責比對行動與個人核心價值是否一致，先確認內在是否認同，再決定是否投入。",
+    "decision_flow": ["感受到事件帶來的情緒反應", "回到內在價值框架比對", "判斷是否符合個人底線", "形成行動與表達選擇"],
+    "daily_manifestations": ["對語氣與立場是否真誠非常敏感", "會花時間釐清自己真正想法", "傾向在重要議題上堅守原則"],
+    "misunderstandings": [
+      { "appearance": "看起來太主觀", "reason": "實際是在做價值一致性檢查" },
+      { "appearance": "不容易馬上回應", "reason": "需要先完成內在判斷流程" }
+    ],
+    "stress_pattern": {
+      "description": "當外在要求與內在價值長期衝突，Fi 會進入過度防衛狀態。",
+      "behaviors": ["對小事也強烈反應", "對他人動機高度懷疑", "退回自我保護模式"]
+    },
+    "conflicts": [
+      { "target_function": "te", "reason": "外在效率要求可能忽略內在價值脈絡" },
+      { "target_function": "fe", "reason": "群體和諧壓力可能壓過個人真實立場" }
+    ]
+  },
+  {
+    "id": "fe",
+    "name": "Fe",
+    "function_axis": "Fe-Ti",
+    "short_summary": "用群體情境調整互動與判斷",
+    "keyword": ["互動協調", "共識", "關係節奏"],
+    "essence": "Fe 在判斷時負責讀取人際場域訊號，調整表達與選擇以維持互動秩序與合作效率。",
+    "decision_flow": ["辨識現場情緒與關係動態", "判斷哪些回應能維持連結", "平衡個別需求與整體節奏", "選擇最合適的互動方式"],
+    "daily_manifestations": ["擅長感知對話氣氛變化", "會主動協調衝突與落差", "傾向用可被接受的方式提出意見"],
+    "misunderstandings": [
+      { "appearance": "太在意他人看法", "reason": "實際是在管理互動成本與合作穩定" },
+      { "appearance": "像在討好", "reason": "目標是讓對話系統維持可運作" }
+    ],
+    "stress_pattern": {
+      "description": "長期高密度社交壓力下，Fe 可能過度迎合外界期待。",
+      "behaviors": ["忽略自身界線", "過度承擔他人情緒", "事後出現強烈耗竭感"]
+    },
+    "conflicts": [
+      { "target_function": "ti", "reason": "結構正確性與人際可接受性會出現拉扯" },
+      { "target_function": "fi", "reason": "群體需求與個人價值可能不同步" }
+    ]
+  },
+  {
+    "id": "ti",
+    "name": "Ti",
+    "function_axis": "Ti-Fe",
+    "short_summary": "用內在邏輯模型驗證一致性",
+    "keyword": ["結構化", "定義精準", "邏輯一致"],
+    "essence": "Ti 在判斷時負責建立精確概念模型，追求原理層級的一致性與可解釋性。",
+    "decision_flow": ["拆解問題元素與定義", "建立概念間關係", "檢查推論是否自洽", "輸出最一致的結論"],
+    "daily_manifestations": ["習慣先澄清定義再討論", "遇到矛盾會反覆推敲", "偏好原理而非口號式結論"],
+    "misunderstandings": [
+      { "appearance": "過度挑剔", "reason": "目標是避免結構錯誤造成後續成本" },
+      { "appearance": "缺乏情感", "reason": "專注點放在模型品質而非情緒表達" }
+    ],
+    "stress_pattern": {
+      "description": "資訊混亂與時間壓力疊加時，Ti 可能卡在過度分析。",
+      "behaviors": ["遲遲不下結論", "反覆修正細節", "與外界溝通斷層增加"]
+    },
+    "conflicts": [
+      { "target_function": "fe", "reason": "邏輯精確與人際節奏需求不一定同步" },
+      { "target_function": "te", "reason": "內部一致性與外部可執行性可能衝突" }
+    ]
+  },
+  {
+    "id": "te",
+    "name": "Te",
+    "function_axis": "Te-Fi",
+    "short_summary": "用外在系統效率推進決策",
+    "keyword": ["執行", "標準化", "結果導向"],
+    "essence": "Te 在判斷時負責將目標轉成可執行流程，優先建立可驗證、可複製的外部系統。",
+    "decision_flow": ["確認目標與限制條件", "拆分任務與資源", "建立執行標準", "依成果回饋迭代流程"],
+    "daily_manifestations": ["善於把抽象目標具體化", "會主動建立流程與分工", "對進度與輸出品質敏感"],
+    "misunderstandings": [
+      { "appearance": "太強勢", "reason": "其實是在壓縮不確定性與執行風險" },
+      { "appearance": "只看結果", "reason": "主要關注系統是否穩定運作" }
+    ],
+    "stress_pattern": {
+      "description": "在不可控變數過多時，Te 可能進入過度控制模式。",
+      "behaviors": ["對細節監控增加", "容錯空間快速縮小", "與他人摩擦升高"]
+    },
+    "conflicts": [
+      { "target_function": "fi", "reason": "流程效率優先可能壓過價值感受" },
+      { "target_function": "ti", "reason": "先執行與先驗證原理的節奏不同" }
+    ]
+  },
+  {
+    "id": "ni",
+    "name": "Ni",
+    "function_axis": "Ni-Se",
+    "short_summary": "以長期模式收斂出核心洞見",
+    "keyword": ["模式收斂", "預測", "洞見"],
+    "essence": "Ni 在感知時負責從大量線索中收斂核心脈絡，形成對趨勢與方向的長期判讀。",
+    "decision_flow": ["吸收分散訊號與脈絡", "內部整合出關聯模式", "聚焦最關鍵主線", "形成方向性判斷"],
+    "daily_manifestations": ["習慣先看長期影響", "會提出高層次關聯觀點", "偏好深度而非廣度資訊處理"],
+    "misunderstandings": [
+      { "appearance": "想太多", "reason": "其實是在做時間尺度較長的模式整合" },
+      { "appearance": "結論跳太快", "reason": "中間整合流程多在內在完成" }
+    ],
+    "stress_pattern": {
+      "description": "當環境訊號過度噪音化，Ni 可能出現過度單一解讀。",
+      "behaviors": ["對單一路徑過度執著", "忽略即時新訊號", "抽離當下互動"]
+    },
+    "conflicts": [
+      { "target_function": "se", "reason": "長期收斂與即時感官行動節奏不同" },
+      { "target_function": "ne", "reason": "聚焦單一路徑與發散多可能性互斥" }
+    ]
+  },
+  {
+    "id": "ne",
+    "name": "Ne",
+    "function_axis": "Ne-Si",
+    "short_summary": "快速擴張可能性與關聯路徑",
+    "keyword": ["發散", "聯想", "可能性"],
+    "essence": "Ne 在感知時負責探索不同解釋與路徑，透過關聯跳躍找出新組合與替代方案。",
+    "decision_flow": ["捕捉刺激中的可延伸線索", "展開多條可能路徑", "比較不同假設的潛力", "保留開放選項"],
+    "daily_manifestations": ["擅長腦力激盪與創意串聯", "能快速提出替代方案", "對新題目有高度探索動機"],
+    "misunderstandings": [
+      { "appearance": "不夠專注", "reason": "正在平行測試多個可能解法" },
+      { "appearance": "想法太跳", "reason": "關聯邏輯建立在跨域連結上" }
+    ],
+    "stress_pattern": {
+      "description": "在高壓與高限制情境，Ne 可能出現過度分心。",
+      "behaviors": ["同時開太多線", "難以收斂優先順序", "因選項過多而停滯"]
+    },
+    "conflicts": [
+      { "target_function": "si", "reason": "探索新路徑與依循既有模式傾向不同" },
+      { "target_function": "ni", "reason": "多重可能與單一洞見導向節奏不同" }
+    ]
+  },
+  {
+    "id": "si",
+    "name": "Si",
+    "function_axis": "Si-Ne",
+    "short_summary": "以既有經驗模板穩定判讀",
+    "keyword": ["經驗參照", "穩定性", "細節記憶"],
+    "essence": "Si 在感知時負責調用既有經驗模板比對當下資訊，確保解讀具備連續性與可預期性。",
+    "decision_flow": ["提取過去相似經驗", "比對當下差異與一致點", "評估風險與穩定程度", "採取較可預測的處理方式"],
+    "daily_manifestations": ["重視流程一致與品質穩定", "對細節誤差敏感", "偏好先確認已知資訊再行動"],
+    "misunderstandings": [
+      { "appearance": "太保守", "reason": "目標是降低偏差與失誤率" },
+      { "appearance": "拘泥細節", "reason": "細節是維持系統可靠性的依據" }
+    ],
+    "stress_pattern": {
+      "description": "高變動且缺乏基準時，Si 可能出現過度防禦。",
+      "behaviors": ["反覆確認細節", "對改動抗拒升高", "焦點縮到短期可控範圍"]
+    },
+    "conflicts": [
+      { "target_function": "ne", "reason": "穩定參照與發散探索會拉扯資源" },
+      { "target_function": "se", "reason": "依據記憶比對與即時沉浸反應不同" }
+    ]
+  },
+  {
+    "id": "se",
+    "name": "Se",
+    "function_axis": "Se-Ni",
+    "short_summary": "即時感知外界並快速回應",
+    "keyword": ["當下感知", "即時行動", "情境掌握"],
+    "essence": "Se 在感知時負責即時接收外界訊號，直接根據現場條件做快速調整與行動。",
+    "decision_flow": ["接收當前環境的具體訊號", "辨識可操作機會與限制", "快速測試回應策略", "根據回饋即時修正行動"],
+    "daily_manifestations": ["擅長現場臨機應變", "對環境細節與節奏敏銳", "偏好先做後修正"],
+    "misunderstandings": [
+      { "appearance": "太衝動", "reason": "核心策略是以即時回饋縮短決策延遲" },
+      { "appearance": "不夠深思", "reason": "資訊處理重心放在現場可用線索" }
+    ],
+    "stress_pattern": {
+      "description": "在長期壓抑即時反應時，Se 可能出現過度刺激追求。",
+      "behaviors": ["用高強度活動轉移壓力", "忽略長期後果", "決策節奏過快"]
+    },
+    "conflicts": [
+      { "target_function": "ni", "reason": "即時行動與長期收斂方向會互相拉扯" },
+      { "target_function": "si", "reason": "當下試錯與依據過往模板策略不同" }
+    ]
+  }
+]
