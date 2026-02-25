@@ -8,6 +8,9 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg"],
+      devOptions: {
+        enabled: true
+      },
       manifest: {
         name: "Cognitive Functions Atlas",
         short_name: "Cognition Atlas",
