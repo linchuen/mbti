@@ -2,7 +2,11 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
+const BASE = "/mbti/"; // ⭐ GitHub repo name
+
 export default defineConfig({
+  base: BASE, // ⭐⭐⭐ 最重要
+
   plugins: [
     react(),
     VitePWA({
@@ -11,6 +15,7 @@ export default defineConfig({
       devOptions: {
         enabled: true
       },
+
       manifest: {
         name: "Cognitive Functions Atlas",
         short_name: "Cognition Atlas",
@@ -18,7 +23,11 @@ export default defineConfig({
         theme_color: "#132238",
         background_color: "#f3efe8",
         display: "standalone",
-        start_url: "/",
+
+        // ⭐ 必改
+        start_url: BASE,
+        scope: BASE,
+
         icons: [
           {
             src: "app-icon.svg",
@@ -33,6 +42,7 @@ export default defineConfig({
           }
         ]
       },
+
       workbox: {
         runtimeCaching: [
           {
