@@ -6,20 +6,25 @@ import { FunctionDetailPage } from "../../modules/cognitive-function/feature/pag
 import { TypeListPage } from "../../modules/personality-type/feature/pages/TypeListPage";
 import { TypeDetailPage } from "../../modules/personality-type/feature/pages/TypeDetailPage";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        { index: true, element: <HomePage /> },
+        { path: "functions", element: <FunctionListPage /> },
+        { path: "functions/:id", element: <FunctionDetailPage /> },
+        { path: "types", element: <TypeListPage /> },
+        { path: "types/:type_code", element: <TypeDetailPage /> },
+        { path: "*", element: <Navigate to="/" replace /> }
+      ]
+    }
+  ],
   {
-    path: "/",
-    element: <AppLayout />,
-    children: [
-      { index: true, element: <HomePage /> },
-      { path: "functions", element: <FunctionListPage /> },
-      { path: "functions/:id", element: <FunctionDetailPage /> },
-      { path: "types", element: <TypeListPage /> },
-      { path: "types/:type_code", element: <TypeDetailPage /> },
-      { path: "*", element: <Navigate to="/" replace /> }
-    ]
+    basename: import.meta.env.BASE_URL
   }
-]);
+);
 
 export function AppRouter() {
   return <RouterProvider router={router} />;

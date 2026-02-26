@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
-const BASE = "/"; 
+const BASE = "/mbti/";
 
 export default defineConfig({
   base: BASE, 
