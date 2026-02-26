@@ -12,7 +12,7 @@
 * 開發規則
 * AI 可操作範圍
 
-各頁面內容規格請參考對應頁面的 `docs/pages/*.md` 文件。
+各頁面內容規格請參考對應頁面的 `specs/pages/*.md` 文件。
 Agent **不可自行發明頁面結構或頁面欄位**。
 
 ---
@@ -45,7 +45,8 @@ Agent 不得引入未列出的主要框架或改變核心技術棧。
 │  ├─ modules            # 領域模組
 │  ├─ shared             # 全站共用（不可放領域知識）
 │  └─ assets             # 可打包資源（svg/icons/images）
-├─ docs                  # 頁面規格 (docs/pages/*.md)
+├─ specs                 # 頁面規格 (specs/pages/*.md)
+├─ specs                 # 頁面規格 (specs/pages/*.md)
 ├─ package.json
 └─ vite.config.ts
 ```
@@ -156,7 +157,7 @@ src/shared/ui/icons/
 ### 原則
 
 * icon 與領域語意的 mapping 必須集中
-* 若 docs 未定義 icon → 不顯示 icon
+* 若 specs 未定義 icon → 不顯示 icon
 * UI 不得自行決定 icon 含義
 
 ---
@@ -211,10 +212,10 @@ src/shared/ui/icons/
 
 ---
 
-## 9. 頁面規格來源（docs）
+## 9. 頁面規格來源（specs）
 
 ```
-docs/pages/
+specs/pages/
   home.md
   function-detail.md
   type-detail.md
@@ -259,7 +260,7 @@ src/modules/**/data
 禁止：
 
 * 更換技術棧
-* 改 docs 規格
+* 改 specs 規格
 * 新增心理學字段
 * 提供現實建議
 
