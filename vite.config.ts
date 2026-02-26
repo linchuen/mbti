@@ -2,10 +2,10 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
-const BASE = "/mbti/"; // ⭐ GitHub repo name
+const BASE = "/"; 
 
 export default defineConfig({
-  base: BASE, // ⭐⭐⭐ 最重要
+  base: BASE, 
 
   plugins: [
     react(),
@@ -24,7 +24,6 @@ export default defineConfig({
         background_color: "#f3efe8",
         display: "standalone",
 
-        // ⭐ 必改
         start_url: BASE,
         scope: BASE,
 
