@@ -1,10 +1,11 @@
-import { AppBar, Box, Button, Container, Stack, Toolbar, Typography } from "@mui/material";
+﻿import { AppBar, Box, Button, Container, Stack, Toolbar, Typography } from "@mui/material";
 import { Link, Outlet, useLocation } from "react-router-dom";
 
 const navItems = [
   { label: "首頁", path: "/" },
-  { label: "功能", path: "/functions" },
-  { label: "類型", path: "/types" }
+  { label: "流程教學", path: "/guide" },
+  { label: "認知功能", path: "/functions" },
+  { label: "人格類型", path: "/types" }
 ];
 
 export function AppLayout() {

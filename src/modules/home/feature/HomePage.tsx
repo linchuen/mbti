@@ -1,7 +1,9 @@
-import { Box, Button, Card, CardContent, Chip, CircularProgress, Stack, Typography } from "@mui/material";
+﻿import { Box, Button, Card, CardContent, Chip, CircularProgress, Stack, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useFunctionsQuery } from "../../cognitive-function/feature/hooks/useFunctionsQuery";
 import { AppIcon } from "../../../shared/ui/icons/AppIcon";
+
+const flowSteps = ["感知方式", "判斷方式", "功能排序", "人格傾向"];
 
 export function HomePage() {
   const { data: functions, isLoading } = useFunctionsQuery();
@@ -40,26 +42,24 @@ export function HomePage() {
             }}
           >
             {functions?.map((item) => (
-              <Box key={item.id}>
-                <Card component={Link} to={`/functions/${item.id}`} sx={{ textDecoration: "none", height: "100%" }}>
-                  <CardContent>
-                    <Stack spacing={1.5}>
-                      <Stack direction="row" spacing={1} alignItems="center">
-                        <AppIcon name={`function.${item.name}`} />
-                        <Typography variant="h6">{item.name}</Typography>
-                      </Stack>
-                      <Typography variant="body2" color="text.secondary">
-                        {item.short_summary}
-                      </Typography>
-                      <Stack direction="row" spacing={0.8} flexWrap="wrap" useFlexGap>
-                        {item.keyword.map((kw) => (
-                          <Chip key={kw} label={kw} size="small" />
-                        ))}
-                      </Stack>
+              <Card key={item.id} component={Link} to={`/functions/${item.id}`} sx={{ textDecoration: "none", height: "100%" }}>
+                <CardContent>
+                  <Stack spacing={1.5}>
+                    <Stack direction="row" spacing={1} alignItems="center">
+                      <AppIcon name={`function.${item.name}`} />
+                      <Typography variant="h6">{item.name}</Typography>
                     </Stack>
-                  </CardContent>
-                </Card>
-              </Box>
+                    <Typography variant="body2" color="text.secondary">
+                      {item.short_summary}
+                    </Typography>
+                    <Stack direction="row" spacing={0.8} flexWrap="wrap" useFlexGap>
+                      {item.keyword.map((kw) => (
+                        <Chip key={kw} label={kw} size="small" />
+                      ))}
+                    </Stack>
+                  </Stack>
+                </CardContent>
+              </Card>
             ))}
           </Box>
         )}
@@ -70,10 +70,10 @@ export function HomePage() {
           人格形成流程
         </Typography>
         <Stack direction={{ xs: "column", md: "row" }} spacing={1.5} alignItems={{ md: "center" }}>
-          {["感知方式", "判斷方式", "功能排序", "人格傾向"].map((step, idx) => (
+          {flowSteps.map((step, idx) => (
             <Stack key={step} direction="row" spacing={1} alignItems="center">
               <Chip label={`${idx + 1}. ${step}`} color="primary" variant="outlined" />
-              {idx < 3 && (
+              {idx < flowSteps.length - 1 && (
                 <Typography color="text.secondary" sx={{ display: { xs: "none", md: "block" } }}>
                   →
                 </Typography>
@@ -84,6 +84,9 @@ export function HomePage() {
         <Typography color="text.secondary" mt={2}>
           人格類型是長期偏好的認知策略，而非固定性格
         </Typography>
+        <Button component={Link} to="/guide" variant="text" sx={{ mt: 1.5 }}>
+          查看完整判斷教學
+        </Button>
       </Card>
 
       <Box
@@ -93,32 +96,29 @@ export function HomePage() {
           gridTemplateColumns: { xs: "1fr", md: "repeat(2, minmax(0, 1fr))" }
         }}
       >
-        <Box>
-          <Card sx={{ height: "100%" }}>
-            <CardContent>
-              <Stack spacing={1.5}>
-                <Typography variant="h5">從功能開始理解</Typography>
-                <Typography color="text.secondary">先理解認知運作，再理解類型</Typography>
-                <Button component={Link} to="/functions" variant="contained">
-                  前往功能
-                </Button>
-              </Stack>
-            </CardContent>
-          </Card>
-        </Box>
-        <Box>
-          <Card sx={{ height: "100%" }}>
-            <CardContent>
-              <Stack spacing={1.5}>
-                <Typography variant="h5">我已知道類型</Typography>
-                <Typography color="text.secondary">直接查看功能堆疊與運作方式</Typography>
-                <Button component={Link} to="/types" variant="outlined">
-                  前往類型
-                </Button>
-              </Stack>
-            </CardContent>
-          </Card>
-        </Box>
+        <Card sx={{ height: "100%" }}>
+          <CardContent>
+            <Stack spacing={1.5}>
+              <Typography variant="h5">從功能開始理解</Typography>
+              <Typography color="text.secondary">先理解認知運作，再理解類型</Typography>
+              <Button component={Link} to="/functions" variant="contained">
+                前往功能
+              </Button>
+            </Stack>
+          </CardContent>
+        </Card>
+
+        <Card sx={{ height: "100%" }}>
+          <CardContent>
+            <Stack spacing={1.5}>
+              <Typography variant="h5">我已知道類型</Typography>
+              <Typography color="text.secondary">直接查看功能堆疊與運作方式</Typography>
+              <Button component={Link} to="/types" variant="outlined">
+                前往類型
+              </Button>
+            </Stack>
+          </CardContent>
+        </Card>
       </Box>
     </Stack>
   );

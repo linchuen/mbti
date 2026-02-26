@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { AppLayout } from "../layout/AppLayout";
 import { HomePage } from "../../modules/home/feature/HomePage";
+import { FormationProcessGuidePage } from "../../modules/home/feature/FormationProcessGuidePage";
 import { FunctionListPage } from "../../modules/cognitive-function/feature/pages/FunctionListPage";
 import { FunctionDetailPage } from "../../modules/cognitive-function/feature/pages/FunctionDetailPage";
 import { TypeListPage } from "../../modules/personality-type/feature/pages/TypeListPage";
@@ -13,6 +14,8 @@ const router = createBrowserRouter(
       element: <AppLayout />,
       children: [
         { index: true, element: <HomePage /> },
+        { path: "guide", element: <FormationProcessGuidePage /> },
+        { path: "formation-process-guide", element: <Navigate to="/guide" replace /> },
         { path: "functions", element: <FunctionListPage /> },
         { path: "functions/:id", element: <FunctionDetailPage /> },
         { path: "types", element: <TypeListPage /> },
