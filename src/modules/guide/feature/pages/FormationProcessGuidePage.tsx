@@ -119,7 +119,7 @@ export function FormationProcessGuidePage() {
 
       <Box>
         <Typography variant="h4" mb={1}>
-          人格形成流程判斷（四步）
+          人格形成流程判斷
         </Typography>
         <Typography color="text.secondary" mb={2}>
           感知方式 → 判斷方式 → 功能排序 → 人格傾向
@@ -177,7 +177,7 @@ export function FormationProcessGuidePage() {
 
       <Box>
         <Typography variant="h4" mb={2}>
-          判斷紀錄表（可重複使用）
+          判斷紀錄表
         </Typography>
         <Stack spacing={2}>
           {records.map((record) => (
