@@ -1,4 +1,4 @@
-﻿import {
+import {
   Alert,
   Box,
   Button,
@@ -13,7 +13,7 @@
   Typography
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import { useFunctionsQuery } from "../../cognitive-function/feature/hooks/useFunctionsQuery";
+import { useGuideFunctionsQuery } from "../hooks/useGuideFunctionsQuery";
 
 const principles = [
   "以處理資訊方式為判斷對象",
@@ -83,7 +83,7 @@ const corrections = [
 ];
 
 export function FormationProcessGuidePage() {
-  const { data: functions, isLoading } = useFunctionsQuery();
+  const { data: functions, isLoading } = useGuideFunctionsQuery();
 
   return (
     <Stack spacing={4}>

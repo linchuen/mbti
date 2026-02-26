@@ -1,118 +1,110 @@
-# AGENT.md
+﻿# AGENT.md
 
 ---
 
-## 1. 專案目標
+## 1. 文件定位
 
-本專案是一個介紹「榮格認知功能」的知識型網站。
+本文件定義本專案的開發規範與 Agent 行為準則。
 
-本文件只規範：
+目標：
 
-* 專案目錄結構
-* 開發規則
-* AI 可操作範圍
-
-各頁面內容規格請參考對應頁面的 `specs/pages/*.md` 文件。
-Agent **不可自行發明頁面結構或頁面欄位**。
+* 維持一致的架構與分層
+* 依 `specs/pages/*.md` 實作頁面
+* 避免 AI 直接改壞專案結構
 
 ---
 
-## 2. 技術棧（固定）
+## 2. 技術棧
 
 * Framework: React + TypeScript
 * UI Library: MUI
 * Icons: react-icons
-* State (client UI state): Zustand（僅 UI 狀態）
-* Data fetching / cache: React Query（即便是 local json，也透過 query layer）
+* State (client UI state): Zustand（只放 UI state）
+* Data fetching / cache: React Query（從 query layer 取資料）
 * Routing: React Router
 * Build: Vite
 * Styling: MUI + emotion
 * PWA: Vite PWA Plugin + Service Worker + Web App Manifest
 
-Agent 不得引入未列出的主要框架或改變核心技術棧。
+Agent 不可任意替換以上技術棧。
 
 ---
 
-## 3. 專案目錄
+## 3. 專案結構
 
-採用 **Module First + Module Internal Layering (Vertical Slice)**
+採用 **Module First + Module Internal Layering (Vertical Slice)**。
 
-```
+```txt
 /
-├─ public                # 靜態檔案：index.html、favicon、manifest、icons
-├─ src
-│  ├─ app                # router / layout / providers / theme / pwa-register
-│  ├─ modules            # 領域模組
-│  ├─ shared             # 全站共用（不可放領域知識）
-│  └─ assets             # 可打包資源（svg/icons/images）
-├─ specs                 # 頁面規格 (specs/pages/*.md)
-├─ specs                 # 頁面規格 (specs/pages/*.md)
-├─ package.json
-└─ vite.config.ts
+  public/
+  src/
+    app/                # router / layout / providers / theme / pwa-register
+    modules/            # 業務模組
+    shared/             # 共用 UI / hooks / utils / icons
+    assets/
+  specs/                # 頁面規格 specs/pages/*.md
+  package.json
+  vite.config.ts
 ```
 
 ---
 
-## 4. modules（領域模組）
+## 4. 模組結構
 
-```
-src/modules
-├─ cognitive-function
-│   ├─ model
-│   ├─ data
-│   ├─ logic
-│   ├─ ui
-│   └─ feature
-│
-├─ personality-type
-│   ├─ model
-│   ├─ data
-│   ├─ logic
-│   ├─ ui
-│   └─ feature
-│
-└─ home
-    └─ feature
+```txt
+src/modules/
+  cognitive-function/
+    model/
+    data/
+    logic/
+    ui/
+    feature/
+
+  personality-type/
+    model/
+    data/
+    logic/
+    ui/
+    feature/
+
+  home/
+    feature/
 ```
 
 ---
 
-## 5. 分層規則（嚴格）
+## 5. 分層責任
 
 ### modules/*
 
-| layer   | 職責                       |
-| ------- | ------------------------ |
-| model   | 型別與領域模型（純 TS）            |
-| data    | 心理學內容 JSON/MD（唯一知識來源）    |
-| logic   | 純函式與資料轉換                 |
-| ui      | 純展示元件（props only）        |
-| feature | 頁面組裝（hooks/router/query） |
+| layer   | 責任 |
+| ------- | ---- |
+| model   | 型別定義（TS types/interfaces） |
+| data    | 靜態資料來源（JSON/MD） |
+| logic   | 業務邏輯、query adapter、轉換函式 |
+| ui      | 可重用展示元件（props only） |
+| feature | page 組裝、router 對接、hooks 使用 |
 
 規則：
 
-* 禁止跨模組讀取 `data`
-* UI 不得直接 import JSON
-* 必須透過 query hooks
-
----
+* 資料來源集中在 `data`
+* UI 不可直接 import JSON
+* 頁面資料一律走 query hooks
 
 ### shared/*
 
-只放：
+允許：
 
 * UI primitives
 * hooks
 * utils
 * icon wrapper
 
-禁止心理學知識。
-
----
+禁止放業務資料或領域邏輯。
 
 ### app/*
 
-只負責：
+僅放：
 
 * Router
 * Layout
@@ -120,162 +112,173 @@ src/modules
 * Theme
 * PWA register
 
-禁止領域邏輯。
+不可放業務模組邏輯。
 
 ---
 
-## 6. Icon 使用規範（react-icons）
+## 6. Icon 規範（react-icons）
 
-為避免 bundle 過大與 UI 不一致，icons 必須集中管理。
+集中管理 icons，避免每個頁面散落 import。
 
-### 放置位置
-
-```
+```txt
 src/shared/ui/icons/
   AppIcon.tsx
   iconMap.ts
 ```
 
-### 使用規則
+規則：
 
-禁止：
+* 頁面/元件不可直接 `import { FaXXX } from "react-icons/fa"`
+* icon 對應與映射統一在 `iconMap.ts`
+* 頁面透過 `AppIcon` 使用
 
-* 在任何元件中直接 `import { FaXXX } from "react-icons/fa"`
-* 各模組自行選 icon
-* icon 帶語意（例如心理功能對應圖示寫死在 UI）
-
-允許：
-
-* 透過 `AppIcon` 使用
-
-### 使用方式
+範例：
 
 ```tsx
 <AppIcon name="function.Fe" size={20} />
 ```
 
-### 原則
-
-* icon 與領域語意的 mapping 必須集中
-* 若 specs 未定義 icon → 不顯示 icon
-* UI 不得自行決定 icon 含義
-
 ---
 
-## 7. 狀態與資料規則
+## 7. 狀態與資料
 
-### Zustand（只存 UI 狀態）
+### Zustand
 
-允許：
+只放 UI state（如 sidebar、dialog、theme）。
 
-* sidebar
-* dialog
-* theme
-* 表單暫存
+不可放：
 
-禁止：
+* 業務資料
+* 取代 React Query cache
 
-* 心理學資料
-* 作為 cache 或資料來源
+### React Query
 
----
-
-### React Query（資料層）
-
-* 所有資料必須透過 query hooks
-* local JSON 視為 API
-* feature 不可直接讀取 data
+* 所有資料讀取走 query hooks
+* local JSON 透過 repository/query layer 暴露
+* feature 不直接觸碰 data 檔案
 
 ---
 
 ## 8. PWA 規範
 
-本專案必須可安裝為離線知識站。
-
-### 必備能力
+需支持：
 
 * 可安裝
-* 離線瀏覽已看過頁面
-* 首頁可離線載入
-* 手機桌面啟動
-* 資料快取版本控制
+* 離線基本可用
+* 首頁可快取
+* 靜態資源快取
+* 版本更新可控
 
-### Service Worker 策略
+Service Worker 策略：
 
-| 資源類型   | 策略                    |
-| ------ | --------------------- |
-| HTML   | Network First         |
-| JSON   | Cache First + version |
-| Images | Cache First           |
-| Fonts  | Cache First           |
-| API    | Network First         |
+| 資源 | 策略 |
+| ---- | ---- |
+| HTML | Network First |
+| JSON | Cache First + version |
+| Images | Cache First |
+| Fonts | Cache First |
+| API | Network First |
 
 ---
 
-## 9. 頁面規格來源（specs）
+## 9. Specs 驅動開發
 
-```
+```txt
 specs/pages/
   home.md
   function-detail.md
   type-detail.md
+  formation-process-guide.md
 ```
 
-Agent 規則：
+Agent 流程：
 
-1. 必讀 md
-2. 僅依 md 建 UI
-3. 不可新增欄位
-4. 若缺欄位需回報
+1. 先讀對應 md 規格
+2. 依規格拆成 UI 區塊
+3. 接上 query hooks
+4. 完成行為與路由
 
 ---
 
-## 10. 內容來源限制
+## 10. 資料放置規範
 
-唯一來源：
+業務資料放在：
 
-```
+```txt
 src/modules/**/data
 ```
 
 禁止：
 
-* UI 硬編碼心理學文字
-* shared 放知識
-* 產生心理建議
+* UI 層硬編碼資料
+* shared 放業務資料
+* 在頁面直接讀 raw data 檔
 
 ---
 
-## 11. Agent 可執行任務
+## 11. Agent 可做 / 不可做
 
-允許：
+可做：
 
-* 建立 page / feature
-* 建立 MUI 展示元件
-* 建立型別
-* 建立 query hooks
-* 建立 Zustand UI store
-* 建立測試
+* 新增 page / feature
+* 新增 MUI 展示元件
+* 補齊型別
+* 新增 query hooks
+* 新增 Zustand UI store
+* 補測試（若專案已有）
 
-禁止：
+不可做：
 
-* 更換技術棧
-* 改 specs 規格
-* 新增心理學字段
-* 提供現實建議
+* 任意改技術棧
+* 無視 specs 自行發揮
+* 跳過 query layer 直讀 data
+* 破壞既有模組分層
+
+---
+
+## 12. 命名慣例
+
+| 類型 | 路徑 |
+| ---- | ---- |
+| Page | `src/modules/<module>/feature/pages/<Name>Page.tsx` |
+| Data | `src/modules/<module>/data/<id>.json` |
+| Model | `src/modules/<module>/model/types.ts` |
+| Logic | `src/modules/<module>/logic/*.ts` |
+| UI | `src/shared/ui/*` |
+| Query | `src/modules/<module>/logic/queries.ts` |
+| Hooks | `src/modules/<module>/feature/hooks/useXYZQuery.ts` |
 
 ---
 
-## 12. 檔案命名與位置約定
+## 13. 教學頁獨立模組規範（Tutorial as Module）
 
-| 類型    | 路徑                                              |
-| ----- | ----------------------------------------------- |
-| Page  | `modules/<module>/feature/<Name>Page.tsx`       |
-| Data  | `modules/<module>/data/<id>.json`               |
-| Model | `modules/<module>/model/types.ts`               |
-| Logic | `modules/<module>/logic/*.ts`                   |
-| UI    | `shared/ui/*`                                   |
-| Query | `modules/<module>/logic/queries.ts`             |
-| Hooks | `modules/<module>/feature/hooks/useXYZQuery.ts` |
+教學相關頁面不可再掛在 `home` 模組下，需改為獨立模組（建議模組名：`guide` 或 `formation-guide`）。
 
----
+### 模組結構要求
+
+```txt
+src/modules/guide/
+  data/
+  model/
+  logic/
+  feature/
+    pages/
+    hooks/
+```
+
+### 路由與頁面要求
+
+* `AppRouter` 中教學主路由統一使用 `/guide`
+* 若已有舊路由（如 `/formation-process-guide`），保留 redirect 到 `/guide`
+* 教學頁元件路徑需為：`src/modules/guide/feature/pages/*Page.tsx`
+
+### 內容邊界
+
+* 教學頁仍遵守 specs，不可做測驗結果或人格最終判定
+* 教學頁可使用 query hooks，但需從對應 module 的 `logic/queries.ts` 暴露
+* `home` 僅保留入口與 CTA，不承載教學邏輯
+
+### 既有專案遷移指引
+
+* 已在 `src/modules/home/feature` 的教學頁，後續調整時應優先搬移到 `src/modules/guide/feature/pages`
+* 搬移時保持同名 export，先更新 router/import，再調整資料與 hooks 分層

@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import { AppLayout } from "../layout/AppLayout";
 import { HomePage } from "../../modules/home/feature/HomePage";
-import { FormationProcessGuidePage } from "../../modules/home/feature/FormationProcessGuidePage";
+import { FormationProcessGuidePage } from "../../modules/guide/feature/pages/FormationProcessGuidePage";
 import { FunctionListPage } from "../../modules/cognitive-function/feature/pages/FunctionListPage";
 import { FunctionDetailPage } from "../../modules/cognitive-function/feature/pages/FunctionDetailPage";
 import { TypeListPage } from "../../modules/personality-type/feature/pages/TypeListPage";
