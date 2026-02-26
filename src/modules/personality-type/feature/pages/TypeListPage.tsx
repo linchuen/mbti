@@ -4,6 +4,7 @@ import { useTypesQuery } from "../hooks/useTypesQuery";
 
 export function TypeListPage() {
   const { data, isLoading } = useTypesQuery();
+  const getTypeImage = (typeCode: string) => `${import.meta.env.BASE_URL}${typeCode}.png`;
 
   return (
     <Stack spacing={3}>
@@ -21,6 +22,20 @@ export function TypeListPage() {
         >
           {data?.map((item) => (
             <Card key={item.id} component={Link} to={`/types/${item.id}`} sx={{ textDecoration: "none" }}>
+              <Box
+                component="img"
+                src={getTypeImage(item.type_code)}
+                alt={`${item.type_code} character`}
+                loading="lazy"
+                sx={{
+                  width: "100%",
+                  aspectRatio: "4 / 3",
+                  objectFit: "contain",
+                  display: "block",
+                  backgroundColor: "rgba(19,34,56,0.03)",
+                  borderBottom: "1px solid rgba(19,34,56,0.08)"
+                }}
+              />
               <CardContent>
                 <Typography variant="h5">{item.type_code}</Typography>
                 <Typography variant="body2" color="text.secondary">

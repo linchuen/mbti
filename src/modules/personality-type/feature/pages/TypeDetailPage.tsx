@@ -7,6 +7,7 @@ export function TypeDetailPage() {
   const { type_code = "" } = useParams();
   const { data, isLoading } = useTypeDetailQuery(type_code);
   const { data: stackFunctions } = useFunctionsOfTypeQuery(type_code);
+  const imageSrc = data ? `${import.meta.env.BASE_URL}${data.type_code}.png` : "";
 
   if (isLoading) return <CircularProgress />;
   if (!data) return <Alert severity="warning">找不到此類型資料。</Alert>;
@@ -15,8 +16,27 @@ export function TypeDetailPage() {
     <Stack spacing={3}>
       <Card>
         <CardContent>
-          <Typography variant="h3">{data.type_code}</Typography>
-          <Typography color="text.secondary">{data.stack_summary}</Typography>
+          <Stack direction={{ xs: "column", md: "row" }} spacing={2.5} alignItems={{ xs: "stretch", md: "center" }}>
+            <Box
+              component="img"
+              src={imageSrc}
+              alt={`${data.type_code} character`}
+              loading="lazy"
+              sx={{
+                width: { xs: "100%", md: 300 },
+                maxWidth: "100%",
+                aspectRatio: "4 / 3",
+                objectFit: "contain",
+                backgroundColor: "rgba(19,34,56,0.03)",
+                borderRadius: 2,
+                border: "1px solid rgba(19,34,56,0.08)"
+              }}
+            />
+            <Box>
+              <Typography variant="h3">{data.type_code}</Typography>
+              <Typography color="text.secondary">{data.stack_summary}</Typography>
+            </Box>
+          </Stack>
         </CardContent>
       </Card>
 
